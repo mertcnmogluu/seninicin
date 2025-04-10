@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Senin İçin 💖</title>
+  <link rel="stylesheet" href="style2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #6a004f, #9b0062, #b82e5f);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      font-family: 'Great Vibes', cursive;
+      overflow-y: scroll;
+      padding: 0 10px;
+    }
+
+    .heart {
+      font-size: 5rem;
+      position: relative;
+      animation: pulse 2s infinite;
+    }
+
+    .heart-beat {
+      position: relative;
+      z-index: 1;
+      color: #ff1a75;
+    }
+
+    .heart-echo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #ff80aa;
+      animation: echo 2s ease-out infinite;
+      opacity: 0.4;
+    }
+
+    .message {
+      font-size: 3em;
+      color: #d6006d;
+      text-align: center;
+      margin-top: 20px;
+      animation: fadeInUp 3s ease forwards;
+      opacity: 0;
+    }
+
+    .note {
+      font-size: 2em;
+      color: white;
+      margin-top: 30px;
+      text-align: center;
+      max-width: 80%;
+      animation: fadeIn 4s ease 3s forwards;
+      opacity: 0;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px #00000099;
+    }
+
+    .letter {
+      font-size: 1.4em;
+      color: #6a004f;
+      background: #ffffffaa;
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 30px;
+      max-width: 70%;
+      line-height: 1.6;
+      box-shadow: 0 0 15px #ffb6c1;
+      animation: fadeIn 3s ease 4s forwards;
+      opacity: 0;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 kolon */
+      gap: 20px;
+      margin-top: 40px;
+      width: 90%;
+      max-width: 900px; /* Genişliği artırdım */
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
+      opacity: 0;
+      animation: fadeInUp 3s ease 5s forwards;
+    }
+
+    .proposal {
+      margin-top: 40px;
+      animation: fadeIn 2s ease 6s forwards;
+      opacity: 0;
+    }
+
+    .proposal button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff4081;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .proposal button:hover {
+      background-color: #d6006d;
+    }
+
+    .stars, .shooting-star {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: twinkle 2s infinite;
+    }
+
+    .shooting-star::before {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 2px;
+      background: white;
+      transform: rotate(-45deg);
+      top: -10%;
+      left: -20%;
+      animation: shoot 5s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes shoot {
+      0% { transform: translate(0, 0) rotate(-45deg); opacity: 1; }
+      100% { transform: translate(200vw, 200vh) rotate(-45deg); opacity: 0; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    /* Mobil Uyumluluk */
+    @media (max-width: 768px) {
+      .heart {
+        font-size: 4rem;
+      }
+
+      .message, .note, .letter {
+        font-size: 1.8em;
+      }
+
+      .photo-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .letter {
+        max-width: 90%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+
+  <div class="heart">
+    <div class="heart-beat">❤️</div>
+    <div class="heart-echo">❤️</div>
+  </div>
+
+  <div class="message">Benim için çok özelsin 💞</div>
+
+  <div class="note">Sadece bugün değil, her gün sana olan sevgimle doluyum... 🌙✨</div>
+
+  <div class="letter">
+    Sevgilim,<br><br>
+    Bugün seninle tam bir ay oldu. Belki çok uzun bir zaman değil ama hissettirdiklerin, yaşattıkların ve varlığın o kadar kıymetli ki… Her an seninle daha da güzelleşiyor. İyi ki yollarımız kesişti, iyi ki sen. Daha nice aylarımız, yıllarımız olsun birlikte. 💫❤️
+  </div>
+
+  <div class="photo-gallery">
+    <img src="baar.jpg" alt="Birlikte Anı 1"/>
+    <img src="baar2.jpg" alt="Birlikte Anı 2"/>
+    <img src="baar3.jpg" alt="Birlikte Anı 3"/>
+    <img src="baar4.jpg" alt="Birlikte Anı 4"/>
+    <img src="baar5.jpg" alt="Birlikte Anı 5"/>
+    <img src="baar6.jpg" alt="Birlikte Anı 6"/>
+    <img src="baar7.jpg" alt="Birlikte Anı 7"/>
+    <img src="baar12.jpg" alt="Birlikte Anı 12"/>
+    <img src="baar9.jpg" alt="Birlikte Anı 9"/>
+    <img src="baar10.jpg" alt="Birlikte Anı 10"/>
+    <img src="baar11.jpg" alt="Birlikte Anı 11"/>
+    <img src="baar8.jpg" alt="Birlikte Anı 8"/>
+    
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://www.youtube.com/watch?v=s2SAH7KLDf0" type="audio/mpeg">
+    Tarayıcınız bu ses öğesini desteklemiyor.
+  </audio>
+
+  <script>
+    const starsContainer = document.querySelector('.stars');
+    function createStar() {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+      starsContainer.appendChild(star);
+      setTimeout(() => star.remove(), 3000);
+    }
+    setInterval(createStar, 150);
+  </script>
+</body>
+</html>
